@@ -1,0 +1,35 @@
+--Most common type--
+SELECT type, COUNT(*) as count
+FROM netflix_titles
+GROUP BY type
+ORDER BY count DESC;
+
+--popular genres in different countries--
+SELECT country, listed_in, COUNT(*) as count
+FROM netflix_titles
+GROUP BY country, listed_in
+ORDER BY count DESC;
+
+--year with most releases--
+SELECT release_year, COUNT(*) as count
+FROM week15.netflix_titles
+WHERE date_added IS NOT NULL
+GROUP BY release_year
+ORDER BY release_year DESC;
+
+--to get the count -- 
+SELECT COUNT(*) AS total_movies FROM week15.netflix_titles;
+
+--Count per Country--
+SELECT
+    country,
+    COUNT(*) AS movie_count
+FROM
+    week15.netflix_titles
+GROUP BY
+    country;
+    
+
+
+
+
